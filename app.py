@@ -9,3 +9,5 @@ def hello(name):
 
 if name == 'main':
   app.run(debug=True)
+
+python app.py
