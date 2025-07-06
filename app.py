@@ -14,7 +14,8 @@ def hello():
     area = requst.form.get('area')
     #TODO: Добавить проверку ввода
   #area = float(area)
-  cost = get_prediction(area)
+  #cost = get_prediction(area)
+  cost = 300_000 * area + 120_000
   message = f"Стоимость квартиры площадью {area} равна {cost} рублей"
   return render_template('index.html', message=message)
 
