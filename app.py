@@ -3,6 +3,8 @@ pip install gunicorn
 from flask import Flask, render_template, request
 from process import get_prediction
 
+pip freeze > requirements.txt
+
 app = Flask(__name__)
 
 @app.route('/', methods = ["get","post"])
