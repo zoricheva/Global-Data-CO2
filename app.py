@@ -1,13 +1,17 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, request
+from process import get_prediction
 
-app = Flask(name)
+app = Flask(__name__)
 
-@app.route('/hello/<name>')
-def hello(name):
-  return render_template('hello.html', name=name)
+@app.route('/', methods = ["get","post"])
+def hello():
+  message = ""
+  if request.method == "POST":
+    area = requst.form.get("area")
+    #TODO: Добавить проверку ввода
+  area = float(area)
+  cost = get_prediction(area)
+  message = f"Стоимость квартиры площадью {area} равна {cost} рублей"
+  return render_template("index.html", message = message)
 
-if name == 'main':
-  app.run(debug=True)
-
-python app.py
+  
