@@ -9,7 +9,7 @@ app = Flask(__name__)
 def hello():
   message = ''
   if request.method == 'POST':
-    area = requst.form.get('area')
+    area = requst.form.get('Area')
     #TODO: Добавить проверку ввода
   #area = float(area)
   cost = get_prediction(area)
