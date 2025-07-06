@@ -1,3 +1,5 @@
+pip install gunicorn
+
 from flask import Flask, render_template, request
 from process import get_prediction
 
