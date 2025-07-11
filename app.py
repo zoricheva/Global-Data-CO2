@@ -15,14 +15,14 @@ def hello():
   if request.method == 'POST':
       with open('model.pkl', 'rb') as f:
             loaded_model = pickle.load(f)
-          try:
-              En = float(flask.request.form ['energy'])
-          except Exception as e:
-            print(e)
-            result += "Некорректный ввод. Установленно значение по умолчанию:0"
+        try:
+          En = float(flask.request.form ['energy'])
+        except Exception as e:
+          print(e)
+          result += "Некорректный ввод. Установленно значение по умолчанию:0"
               y_pred = loaded_model.predict([(En)])
+          return render_template('index.html', result = y_pred)
 
-    return render_template('index.html', result = y_pred)
     
 
  
