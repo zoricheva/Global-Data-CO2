@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/', methods = ['POST','GET'])
 def hello():
-  result = ''
+  message = ''
   if request.method == 'POST':
     try:
       En = float(flask.request.form ['energy'])
@@ -20,11 +20,17 @@ def hello():
         loaded_model = pickle.load(f)
     except Exception as e:
         print(e)
-        result += f"Некорректный ввод. Установленно значение по умолчанию:0"
+        message += f"Некорректный ввод. Установленно значение по умолчанию:0"
         En = 0.0
     y_pred = loaded_model.predict([(En)])
-    result += f"Предсказание:{y_pred}"
-   return render_template('index.html', result=result)
+    message += f"Предсказание:{y_pred}"
+   return render_template('index.html', result = message)
+
+app = Flask(__name__, template_folder = 'templates')
+
+@app.route('/', methods = ['POST','GET'])
+
+
 
     
 
