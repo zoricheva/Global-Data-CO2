@@ -21,7 +21,7 @@ linear_model = LinearRegression()
 linear_model.fit(X_train, y_train)
 predictions_linear = linear_model.predict(X_test)
 
-pickle.dump(linear_model, open('model.pkl', 'wb'))
 
-model_load = pickle.load(open('model.pkl', 'rb'))
+
+
 
