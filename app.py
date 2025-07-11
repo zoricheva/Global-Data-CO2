@@ -14,7 +14,7 @@ def hello():
   message = ''
   if request.method == 'POST':
     try:
-      En = float(flask.request.form ['energy'])
+      En = flask.request.form ['energy']
          
       with open('model.pkl', 'rb') as f:
         loaded_model = pickle.load(f)
