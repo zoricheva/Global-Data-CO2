@@ -1,4 +1,4 @@
-
+import numpy as np
 from flask import Flask, render_template, request
 from process import get_prediction
 import pickle
