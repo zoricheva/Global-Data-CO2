@@ -10,7 +10,7 @@ app = flask.Flask(__name__, template_folder = 'templates')
 @app.route('/', methods = ['POST','GET'])
 
 @app.route('/index', methods = ['POST','GET'])
-def main:
+def index():
 
 #функция
 if flask.request.method == 'GET':
