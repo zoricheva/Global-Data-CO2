@@ -4,7 +4,7 @@ import pickle
 import sklearn
 from sklearn.linear_model import LinearRegression
 
-
+#инициализация приложения
 app = flask.Flask(__name__, template_folder = 'templates')
 
 @app.route('/', methods = ['POST','GET'])
@@ -12,6 +12,7 @@ app = flask.Flask(__name__, template_folder = 'templates')
 @app.route('/index', methods = ['POST','GET'])
 def main:
 
+#функция
 if flask.request.method == 'GET':
   return render_template('index.html')
 
