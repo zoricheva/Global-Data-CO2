@@ -16,17 +16,14 @@ if flask.request.method == 'GET':
   return render_template('index.html')
 
   if flask.request.method == 'POST':
+    with open('model.pkl', 'rb') as f:
+      loaded_model = pickle.load(f)
 
-    
-    area = request.form.get('area')
-    try:
-      area = float(area)
-    except Exception as e:
-      print(e)
-      message += "Некорректный ввод. Установленно значение по умолчанию:0"
-    cost = get_prediction(area)
-    message = f"Стоимость квартиры площадью {area} равна {cost} рублей"
-    
-  return render_template('index.html', message=message)
+    En = float(flask.request.form ['energy'])
+    y_pred = loaded_model.predict([(En)])
+
+    return render_template('index.html', result = y_pred)
+
+ 
 
   
