@@ -15,9 +15,10 @@ def hello():
 #функция
 if flask.request.method == 'GET':
   return render_template('index.html')
-  if flask.request.method == 'POST':
-    with open('model.pkl', 'rb') as f:
-      loaded_model = pickle.load(f)
+  
+if flask.request.method == 'POST':
+  with open('model.pkl', 'rb') as f:
+    loaded_model = pickle.load(f)
 
     En = float(flask.request.form ['energy'])
     y_pred = loaded_model.predict([(En)])
