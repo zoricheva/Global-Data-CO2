@@ -24,11 +24,8 @@ def hello():
         En = 0.0
     y_pred = loaded_model.predict([(En)])
     message += f"Предсказание:{y_pred}"
-   return render_template('index.html', result = message)
+  return render_template('index.html', result = message)
 
-app = Flask(__name__, template_folder = 'templates')
-
-@app.route('/', methods = ['POST','GET'])
 
 
 
