@@ -12,10 +12,10 @@ app = Flask(__name__, template_folder = 'templates')
 
 @app.route('/index', methods = ['POST','GET'])
 def main():
-    if flask.request.method == 'GET':
+    if request.method == 'GET':
         return render_template('index.html')
     
-    if flask.request.method == 'POST':
+    if request.method == 'POST':
         with open('model.pkl', 'rb') as f:
             loaded_model = pickle.load(f)
 
