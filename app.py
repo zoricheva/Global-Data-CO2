@@ -5,17 +5,19 @@ import sklearn
 from sklearn.linear_model import LinearRegression
 
 
-app = flask.Flask(__name__, template_folder = 'template')
+app = flask.Flask(__name__, template_folder = 'templates')
 
 @app.route('/', methods = ['POST','GET'])
 
-@app.route('/index.html', methods = ['POST','GET'])
+@app.route('/index', methods = ['POST','GET'])
 def main:
 
+if flask.request.method == 'GET':
+  return render_template('index.html')
 
-def hello():
-  message = ''
-  if request.method == 'POST':
+  if flask.request.method == 'POST':
+
+    
     area = request.form.get('area')
     try:
       area = float(area)
