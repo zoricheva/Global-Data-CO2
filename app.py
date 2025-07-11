@@ -5,24 +5,25 @@ import pickle
 import sklearn 
 from sklearn.linear_model import LinearRegression
 
-#инициализация приложения
-app = Flask(__name__, template_folder = 'templates')
+
+
+app = Flask(__name__)
 
 @app.route('/', methods = ['POST','GET'])
-
-@app.route('/index', methods = ['POST','GET'])
-def main():
-    if request.method == 'GET':
-        return render_template('index.html')
-    
-    if request.method == 'POST':
-        with open('model.pkl', 'rb') as f:
+def hello():
+  message = ''
+  if request.method == 'POST':
+      with open('model.pkl', 'rb') as f:
             loaded_model = pickle.load(f)
+          try:
+              En = float(flask.request.form ['energy'])
+          except Exception as e:
+            print(e)
+            result += "Некорректный ввод. Установленно значение по умолчанию:0"
+              y_pred = loaded_model.predict([(En)])
 
-        En = float(flask.request.form ['energy'])
-        y_pred = loaded_model.predict([(En)])
-
-        return render_template('index.html', result = y_pred)
+    return render_template('index.html', result = y_pred)
+    
 
  
 
