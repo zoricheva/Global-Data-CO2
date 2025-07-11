@@ -12,17 +12,19 @@
   }
 </style>
 
+ 
 #контейтеры для форм куда передавать данные будем
 <html>
   <head>
     <title>Прогнозирование СО2</title>
   </head>
 
-  <form action="{{url_for('index')}}" method="POST">
+  <form method="POST">
+    
     #ввод значений
     <fieldset>
-      <legend>Введите значение</legend>
-      Количество потребляемой энергии в стране
+      <legend>Количество потребляемой энергии в странее</legend>
+      
       <input name = "energy" type="number"
         required>
       <br>
@@ -30,6 +32,7 @@
       #кнопка отправить
       <input type="submit">
     </fieldset>
+    
   </form>
 
   #контейнер для результатов
