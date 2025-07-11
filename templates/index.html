@@ -12,30 +12,27 @@
   }
 </style>
 
- 
-#контейтеры для форм куда передавать данные будем
 <html>
   <head>
     <title>Прогнозирование СО2</title>
   </head>
-
+  
+  <body>
+    <h1>Калькулятор стоимости недвижимости</h1>
   <form method="POST">
-    
-    #ввод значений
     <fieldset>
-      <legend>Количество потребляемой энергии в странее</legend>
+      <legend>Количество потребляемой энергии в стране</legend>
       
       <input name = "energy" type="number"
         required>
       <br>
       <br>
-      #кнопка отправить
+
       <input type="submit">
-    </fieldset>
-    
+    </fieldset>   
   </form>
 
-  #контейнер для результатов
+
   <div class="result" align="center">
     {% if result %}
         <br>
@@ -44,6 +41,7 @@
         </p>
     {% endif%}
   </div>
+  </body>
     
   
 </html>
