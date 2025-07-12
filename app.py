@@ -7,24 +7,28 @@ from sklearn.linear_model import LinearRegression
 
 
 
+
+
+
 app = Flask(__name__)
 
 @app.route('/', methods = ['POST','GET'])
 def hello():
   message = ''
   if request.method == 'POST':
+    energy = request.form.get('energy')
     try:
-      En = flask.request.form ['energy']
-         
+      energy = float(energy)
+    except Exception as e:
+      print(e)
+      message += "Некорректный ввод. Установленно значение по умолчанию:0"
+      
       with open('model.pkl', 'rb') as f:
         loaded_model = pickle.load(f)
-    except Exception as e:
-        print(e)
-        message += "Некорректный ввод. Установленно значение по умолчанию:0"
-        En = 0.0
-    y_pred = loaded_model.predict([(En)])
-    message = f"Предсказание:{y_pred}"
-  return render_template('index.html', result = message)
+    y_pred = loaded_model.predict([(energy)])
+    message = f"Предскаание {energy} равна {y_pred} рублей"
+    
+  return render_template('index.html', message=message)
 
 
 
