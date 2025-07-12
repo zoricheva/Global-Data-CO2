@@ -1,36 +1,24 @@
-<!doctype html>
 
 
 <html>
   <head>
-    <title>Прогнозирование СО2</title>
-  
-  
+    <title>Прогнозирование</title>
+  </head>
   <body>
-    <h1>Прогнозирование СО2</h1>
-  <form method="POST">
-    <fieldset>
-      <legend>Количество потребляемой энергии в стране</legend>
-      
-      <input name = "energy" type="number"
-        required>
-      <br>
-      <br>
-
-      <input type="submit">
-    </fieldset>   
-  </form>
-
-
-  <div class="result" align="center">
-    {% if result %}
-        <br>
-        <p style="font-size:50px">
-        Прогноз
-        </p>
-    {% endif%}
-  </div>
-  </body>
-    
- </head> 
+    <h1>Количество потребляемой энергии в стране</h1>
+    <form method = "post">
+      <p>
+        <label>значение</label>
+        <input name = "energy" type = "text">
+     </p>
+      <p>
+        <input type = "submit">
+      </p>
+    </form>
+    <p>
+      {% if message %}
+      {{ message }}
+      {% endif %}
+    </p>
+ </body>
 </html>
