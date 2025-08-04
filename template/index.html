@@ -1,39 +1,25 @@
-<!doctype html>
-<style>
-  form {
-    margin:auto;
-    width: 35%;
-  }
-
-  .result{
-    margin:auto;
-    width:35%;
-    border: 1px solid #ccc;
-  }
-</style>
 
 <html>
-  <head>
-    <title>Прогнозирование</title>
-  </head>
-  
-  <body>
-   
-    <form method = "POST">
-      <p>
-        <label>Электричество из ископаемого топлива</label>
-        <input name = "energy" type = "text">
-      </p>
-      <p>
-        <input type = "submit">
-      </p>
-    </form>
-    <p>
-      {% if message %}
-      {{ message }}
-      {% endif %}
-    </p>
- </body>
+    <head>
+        <title>Калькулятор</title>
+    </head>
+    <body>
+        <h1>Калькулятор стоимости недвижимости</h1>
+        <form method="post">
+            <p>
+                <label>Площадь квартиры</label>
+                <input name="energy" type="text">
+            </p>
+            <p>
+                <input type="submit">
+            </p>
+        </form>
+        <p>
+            {% if message %}
+            {{ message }}
+            {% endif %}
+        </p>
+    </body>
 </html>
      
     
