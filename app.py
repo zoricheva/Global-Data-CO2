@@ -6,7 +6,7 @@ import pickle
 app = Flask(__name__)
 
 @app.route('/', methods = ['POST','GET'])
-def hello():
+def index():
   message = ''
   if request.method == 'POST':
     energy = flask.request.form ['energy']
