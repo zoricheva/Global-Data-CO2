@@ -12,7 +12,7 @@ def hello():
     energy = float(energy)
     co = get_prediction(energy)
     
-    message = f"Стоимость квартиры площадью {energy} равна {co} рублей"
+    message = f"При потребляемой энергии в размере {energy} количество выбросов будет равно {co} "
     
   
   
