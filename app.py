@@ -16,7 +16,6 @@ def hello():
   return render_template('index.html', message = message)
 
 
-if __name__
-app.run
+
 
 
