@@ -11,7 +11,7 @@ def hello():
     energy = requst.form.get("energy")
     energy = float(energy)
     co = get_prediction(energy)
-    print(energy)
+    print(co)
   
   
   return render_template("index.html")
