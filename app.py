@@ -10,11 +10,10 @@ def hello():
     energy = request.form.get("energy")
     energy = float(energy)
     co2 = get_prediction(energy)
-    print(co2)
     message = f"Предсказание:{y_pred}"
 
   
-  return render_template('index.html', result = message)
+  return render_template('index.html', message = message)
 
 
 if __name__
