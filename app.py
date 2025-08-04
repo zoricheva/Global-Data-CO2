@@ -3,7 +3,7 @@ from process import get_prediction
 
 app = Flask(__name__)
 
-@app.route('/', methods = ["get","post"])
+@app.route('/hello', methods = ["get","post"])
 def hello():
   message = ""
   if request.method == "POST":
