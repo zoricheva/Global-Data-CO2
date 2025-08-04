@@ -10,9 +10,9 @@ def hello():
   if request.method == "POST":
     energy = request.form.get("energy")
     energy = float(energy)
-    co = get_prediction(energy)
+    co2 = get_prediction(energy)
     
-    message = f"При потребляемой энергии в размере {energy} количество выбросов будет равно {co} "
+    message = f"При потребляемой энергии в размере {energy} количество выбросов будет равно {co2} "
     
   
   
