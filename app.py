@@ -11,11 +11,11 @@ def hello():
     energy = request.form.get("energy")
     try:
         energy = float(energy)
-        except Exception as e:
-            print(e)
-            message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
-            energy = 0.0
-    
+    except Exception as e:
+      print(e)
+      message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
+      energy = 0.0
+
     co2 = get_prediction(energy)
     message = f"При потребляемой энергии в размере {energy} количество выбросов будет равно {co2} "
     
