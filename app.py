@@ -7,7 +7,7 @@ app = Flask(__name__)
 def hello():
   message = ''
   if request.method == 'POST':
-    energy = request.form.get("energy")
+    energy = request.form.get["energy"]
     energy = float(energy)
     co2 = get_prediction(energy)
     message = f"Предсказание:{co2}"
