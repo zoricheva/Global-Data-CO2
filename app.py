@@ -8,10 +8,10 @@ app = Flask(__name__)
 def hello():
   message = ""
   if request.method == "POST":
-    energy = requst.form.get("energy")
+    energy = request.form.get("energy")
     energy = float(energy)
     co = get_prediction(energy)
-    print(co)
+    
     message = f"Стоимость квартиры площадью {energy} равна {co} рублей"
     
   
