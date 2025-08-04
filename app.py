@@ -13,7 +13,7 @@ def hello():
     message = f"Предсказание:{co2}"
 
   
-  return render_template('index.html', message = message)
+  return render_template("index.html", message = message)
 
 
 
