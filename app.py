@@ -5,4 +5,5 @@ app = Flask(__name__)
 
 @app.route('/hello')
 def hello():
-    return render_template("index.html")
+    message = f"Стоимость квартиры площадью  равна  рублей"
+  return render_template("index.html", message = message)
