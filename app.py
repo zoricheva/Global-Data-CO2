@@ -11,8 +11,9 @@ def hello():
     energy = requst.form.get("energy")
     energy = float(energy)
     co = get_prediction(energy)
-    message = f"Стоимость квартиры площадью {energy} равна {co} рублей"
     print(co)
+    message = f"Стоимость квартиры площадью {energy} равна {co} рублей"
+    
   
   
-  return render_template("index.html")
+  return render_template("index.html", message = message)
