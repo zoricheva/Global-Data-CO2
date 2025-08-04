@@ -9,9 +9,9 @@ def hello():
   
   if request.method == "POST":
     energy = requst.form.get("energy")
-    
-  energy = float(energy)
-  co = get_prediction(energy)
-  print(energy)
-    
+    energy = float(energy)
+    co = get_prediction(energy)
+    print(energy)
+  
+  
   return render_template("index.html")
