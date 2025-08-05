@@ -10,6 +10,8 @@ from sklearn.linear_model import LinearRegression
 def get_prediction(energy):
 
     energy = X_test
+    linear_model = pickle.load(open('model.pkl','rb'))
+    co2 = linear_model.predict(X_test)
     
     # TODO: Добавить загрузку модели из файла
     # Примечание: если использовалась предобработка, то нужно тоже ее выполнить в коде приложения
@@ -18,9 +20,7 @@ def get_prediction(energy):
     
    # with open('model.pkl', 'rb') as f:
        # loaded_model = pickle.load(f)
-    
-     linear_model = pickle.load(open('model.pkl','rb'))
-     co2 = linear_model.predict(X_test)
+ 
         
     #co2 = loaded_model.predict([(energy)])
 
@@ -28,6 +28,7 @@ def get_prediction(energy):
 
     
     return co2
+
 
 
 
