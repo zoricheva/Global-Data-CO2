@@ -1,10 +1,7 @@
 import pickle
-import pandas as pd
+
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
-import matplotlib
-import matplotlib.pyplot as plt
-import seaborn as sns
+
 from sklearn.linear_model import LinearRegression
 
 def get_prediction(energy):
@@ -28,6 +25,7 @@ def get_prediction(energy):
 
     
     return co2
+
 
 
 
