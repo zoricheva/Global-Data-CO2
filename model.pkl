@@ -13,6 +13,9 @@ import pickle
 df1=pd.read_csv("/content/drive/MyDrive/Colab Notebooks/CARBON/Sum_energy.csv")
 del df1['Country']
 del df1['Year']
+del df1['Electricity from fossil fuels (TWh)']
+del df1['Electricity from nuclear (TWh)']
+del df1['Electricity from renewables (TWh)']
 
 X = df1.drop('Value_co2_emissions_kt_by_country', axis=1)
 y = df1['Value_co2_emissions_kt_by_country']
