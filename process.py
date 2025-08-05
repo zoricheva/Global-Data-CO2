@@ -1,6 +1,8 @@
 import pickle
 
 def get_prediction(energy):
+
+    energy = X_test
     
     # TODO: Добавить загрузку модели из файла
     # Примечание: если использовалась предобработка, то нужно тоже ее выполнить в коде приложения
@@ -15,10 +17,11 @@ def get_prediction(energy):
         
     #co2 = loaded_model.predict([(energy)])
 
-      co2 = co2(energy)
+     
 
     
     return co2
+
 
 
 
