@@ -11,13 +11,14 @@ def get_prediction(energy):
        # loaded_model = pickle.load(f)
     
      linear_model = pickle.load(open('model.pkl','rb'))
-     co2 = linear_model.predict([[energy]])
+     co2 = linear_model.predict([energy])
         
     #co2 = loaded_model.predict([(energy)])
 
 
     
     return co2
+
 
 
 
