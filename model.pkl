@@ -11,6 +11,8 @@ from sklearn.model_selection import cross_val_score, train_test_split
 import pickle
 
 df1=pd.read_csv("/content/drive/MyDrive/Colab Notebooks/CARBON/Sum_energy.csv")
+del df1['Country']
+del df1['Year']
 
 X = df1.drop('Value_co2_emissions_kt_by_country', axis=1)
 y = df1['Value_co2_emissions_kt_by_country']
