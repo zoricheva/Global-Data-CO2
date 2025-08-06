@@ -1,3 +1,6 @@
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
 import pickle
 
 X = np.array([23,556,34,8,12,23,6,87,90,2,11,45]).reshape(-1,1)
