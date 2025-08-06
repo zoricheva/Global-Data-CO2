@@ -19,7 +19,7 @@ def hello():
     co2 = get_prediction(energy)
     message = f"При потребляемой энергии в размере {energy} количество выбросов будет равно {co2} "
 
-  return render_template("index.html", message = message)
+  return render_template("index2.html", message = message)
 
 
   
