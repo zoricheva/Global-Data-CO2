@@ -1,15 +1,24 @@
 from flask import Flask, render_template, request
 from process import get_prediction
 
+
 app = Flask(__name__)
 
-@app.route('/', methods = ["get","post"])
+@app.route('/', methods=["get", "post"])
 def hello():
   message = ""
   if request.method == "POST":
-    area = requst.form.get("area")
-    #TODO: Добавить проверку ввода
-  area = float(area)
-  cost = get_prediction(area)
-  message = f"Стоимость квартиры площадью {area} равна {cost} рублей"
+    energy = request.form.get("energy")
+    try:
+        energy = float(energy)
+    except Exception as e:
+      print(e)
+      message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
+      energy = 0.0
+
+    co2 = get_prediction(energy)
+    message = f"При потребляемой энергии в размере {energy} количество выбросов будет равно {co2} "
+    
+  
+  
   return render_template("index.html", message = message)
