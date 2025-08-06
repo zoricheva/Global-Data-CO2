@@ -5,7 +5,7 @@
     width: 35%;
   }
 
-  .message{
+  .result{
     margin:auto;
     width:35%;
     border: 1px solid #ccc;
@@ -13,13 +13,13 @@
 </style>
 
 
-<html>
     <head>
         <title>Предсказание СО2</title>
     </head>
-    <body>
+    
         
-        <form method="post">
+        <form action="{{url_for('hello')}} method="post">
+         
           <h1>Калькулятор СО2</h1>
             <p>
                 <label>Количество энергии</label>
@@ -38,9 +38,15 @@
             </p>
         
         <p>
-          <div class="message" align="center">
-            {% if message %}
-            {{ message }}
+          <div class="result" align="center">
+            {% if result %}
+            <br>
+            <p>
+            ваш прогноз
+            </p>
+            <p>
+            {{result}}
+            </p>
             {% endif %}
           </div>
         </p>
