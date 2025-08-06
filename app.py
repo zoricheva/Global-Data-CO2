@@ -17,10 +17,11 @@ def hello():
   if request.method == "POST":
     en = request.form.get('energy')
 
-    loaded_model = pickle.load(open('model_d.pkl', 'rb'))
+    with open('model_d.pkl','rb') as f:
+    loaded_model = pickle.load(f)
 
-    
-    co2 = loaded_model.predict([en])
+    X_test = en
+    co2 = loaded_model.predict(X_test)
 
     
     return render_template('index.html', result = co2)
