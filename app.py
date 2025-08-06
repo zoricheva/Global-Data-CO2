@@ -22,7 +22,8 @@ def hello():
 
     with open('model_ex.pkl','rb') as f:
       loaded_model = pickle.load(f)
-      co2 = loaded_model.predict(energy)
+      loaded_model = model
+      co2 = model.predict(energy)
     
     message = f"При потребляемой энергии в размере {energy} количество выбросов будет равно {co2} "
     
