@@ -22,7 +22,7 @@ def hello():
     en = float(request.form['energy'])
     co2 = loaded_model.predict([[en]])
 
-    message = f"При потребляемой энергии в размере {en} количество выбросов будет равно {co2} " 
+    message = f"При потребляемой энергии в размере {energy} количество выбросов будет равно {co2} " 
     return render_template('index.html', message = message)
 
     
