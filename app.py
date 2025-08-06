@@ -12,7 +12,7 @@ app = Flask(__name__)
 def hello():
   
   if request.method == "GET": 
-  return render_template('index.html')
+    return render_template('index.html')
     
   if request.method == "POST":
     with open('model_d.pkl', 'rb') as f:
