@@ -16,7 +16,10 @@ def hello():
       message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
       energy = 0.0
 
-    co2 = get_prediction(energy)
+    def get_prediction(energy):
+    co2 = 400 * energy + 345
+    return co2
+    
     message = f"При потребляемой энергии в размере {energy} количество выбросов будет равно {co2} "
     
   
