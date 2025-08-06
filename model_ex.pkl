@@ -1,6 +1,2 @@
-import pickle
 
-def loaded_model(energy):
-    model = 300*energy + 485
-    return model
 
