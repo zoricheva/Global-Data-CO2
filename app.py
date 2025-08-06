@@ -17,11 +17,11 @@ def hello():
     with open('model_d.pkl', 'rb') as f:
       loaded_model = pickle.load(f)
 
-    energy = request.form.get('energy')
-    energy = float(energy)
-    co2 = loaded_model.predict([[energy]])
+    en = request.form.get('energy')
+    en = float(en)
+    co2 = loaded_model.predict([[en]])
 
     
-    return render_template('index.html', message = co2)
+    return render_template('index.html', result = co2)
 
     
