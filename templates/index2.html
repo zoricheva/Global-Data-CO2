@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Прогноз со2</title>
+    </head>
+    <body>
+        <h1>Калькулятор со2</h1>
+        <form method="post">
+            <p>
+                <label>Количесство энергии</label>
+                <input name="area" type="text">
+            </p>
+            <p>
+                <input type="submit">
+            </p>
+        </form>
+        <p>
+            {% if message %}
+            {{ message }}
+            {% endif %}
+        </p>
+    </body>
+</html>
