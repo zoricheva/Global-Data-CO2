@@ -8,9 +8,9 @@ from sklearn.linear_model import LinearRegression
 app = Flask(__name__, template_folder = 'templates')
 
 @app.route('/', methods=["get", "post"])
-@app.route('/index', methods=["get", "post"])
 
-def index():
+
+def hello():
   message = ""
   if request.method == "GET":
     return render_template('index.html')
