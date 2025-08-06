@@ -1,7 +1,5 @@
 def get_prediction(energy):
-
    
     co2 = 400 * energy + 345
      
-
     return co2
