@@ -5,13 +5,11 @@ import sklearn
 from sklearn.linear_model import LinearRegression
 
 
-app = Flask(__name__, template_folder = 'templates')
+app = Flask(__name__)
 
-@app.route('/', methods=["get", "post"])
-
-
+@app.route('/', methods = ["get","post"])
 def hello():
-  message = ""
+  
   if request.method == "GET":
     return render_template('index.html')
     
@@ -19,10 +17,11 @@ def hello():
     with open('model_d.pkl', 'rb') as f:
       loaded_model = pickle.load(f)
 
-    en = float(request.form['energy'])
-    co2 = loaded_model.predict([[en]])
+    energy = request.form.get('energy')
+    energy = float(energy)
+    co2 = loaded_model.predict([[energy]])
 
-    message = f"При потребляемой энергии в размере {energy} количество выбросов будет равно {co2} " 
-    return render_template('index.html', message = message)
+    
+    return render_template('index.html', message = co2)
 
     
