@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from process import get_prediction
 import pickle
 import sklearn
-from sklearn.linear_model import LinearRegression
+
 
 
 app = Flask(__name__)
