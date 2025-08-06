@@ -1,6 +1,5 @@
 import pickle
-import sklearn
-from sklearn.linear_model import LinearRegression
+
 
 def get_prediction(energy):
 
@@ -23,6 +22,7 @@ def get_prediction(energy):
 
     
     return co2
+
 
 
 
