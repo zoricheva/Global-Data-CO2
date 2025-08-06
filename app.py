@@ -7,19 +7,18 @@ from sklearn.linear_model import LinearRegression
 
 app = Flask(__name__)
 
-@app.route('/', methods = ["get","post"])
+@app.route('/index', methods = ["get","post"])
 
-def main():
-  if request.method == "GET": 
-    return render_template('index.html')
+def index():
+  
     
   if request.method == "POST":
     with open('model_d.pkl', 'rb') as f:
       loaded_model = pickle.load(f)
 
-    en = request.form.get['energy']
-    en = float(en)
-    co2 = loaded_model.predict([[en]])
+    en = request.form.get('energy')
+    
+    co2 = loaded_model.predict([en])
 
     
     return render_template('index.html', result = co2)
