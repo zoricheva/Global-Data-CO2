@@ -5,7 +5,7 @@ import sklearn
 from sklearn.linear_model import LinearRegression
 
 
-app = flask.Flask(__name__, template_folder = 'templates')
+app = Flask(__name__, template_folder = 'templates')
 
 @app.route('/', methods=["get", "post"])
 @app.route('/index', methods=["get", "post"])
