@@ -18,7 +18,7 @@ def hello():
     en = request.form.get('energy')
 
     with open('model_d.pkl','rb') as f:
-    loaded_model = pickle.load(f)
+      loaded_model = pickle.load(f)
 
     X_test = en
     co2 = loaded_model.predict(X_test)
