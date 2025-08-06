@@ -1,10 +1,10 @@
 import pickle
 
+X = np.array([23,556,34,8,12,23,6,87,90,2,11,45]).reshape(-1,1)
+y = np.array([2,45,8,10,3,7,56,34,89,4,76,6])
 
-def get_prediction(energy):
+X_train, X_test, y_train, y_test= train_test_split(X, y, test_size=0.2, random_state=42)
 
-   linear_model = 400 * energy + 345
-   co2 = linear_model.predict(energy)
-
-    
-    return co2
+linear_model = LinearRegression()
+linear_model.fit(X_train, y_train)
+co2 = linear_model.predict(X_test)
