@@ -2,5 +2,9 @@ import pickle
 
 
 def get_prediction(energy):
-    co2 = 400 * energy + 345
+
+   linear_model = 400 * energy + 345
+   co2 = linear_model.predict(energy)
+
+    
     return co2
