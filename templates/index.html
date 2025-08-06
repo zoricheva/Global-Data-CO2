@@ -12,30 +12,23 @@
   }
 </style>
 
-
+<html>
     <head>
         <title>Предсказание СО2</title>
     </head>
-    
-        
-        <form method="post" action="{{url_for('main')}}">
-         
-          <h1>Калькулятор СО2</h1>
-            <p>
-                <label>Количество энергии</label>
-                <input name="energy" type="text">
-            </p>
-            <p>
-                <label>Количество энергии АЭС</label>
-                <input name="energy2" type="text">
-            </p>
-            <p>
-                <label>Количество энергии природных источников</label>
-                <input name="energy3" type="text">
-            </p>
-            <p>
-                <input type="submit">
-            </p>
+  
+    <body>
+        <h1>Калькулятор СО2</h1>
+      
+        <form action="{{url_for('main')}}" method="post">
+          <fieldset>
+            <legend>Количество энергии</legend>
+            <input name="energy" type="text">
+            <br>
+            <br>
+            <input type="submit">
+          </fieldset>
+        </form>
         
         <p>
           <div class="result" align="center">
@@ -50,7 +43,7 @@
             {% endif %}
           </div>
         </p>
-        </form>
+        
        
     </body>
 </html>
