@@ -20,8 +20,8 @@ def hello():
       message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
       energy = 0.0
 
-    with open('model_ex.pkl','rb') as f:
-      loaded_model = pickle.load(f)
+    #with open('model_ex.pkl','rb') as f:
+     # loaded_model = pickle.load(f)
       
       co2 = 300*energy + 485
     
