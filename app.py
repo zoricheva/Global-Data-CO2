@@ -15,10 +15,10 @@ def hello():
     return render_template('index.html')
     
   if request.method == "POST":
-    with open('model_d.pkl', 'rb') as f:
-      loaded_model = pickle.load(f)
+    en = request.form.get('energy')
 
-    en = float(request.form.get('energy'))
+    loaded_model = pickle.load(open('model_d.pkl', 'rb'))
+
     
     co2 = loaded_model.predict([en])
 
