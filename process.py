@@ -5,7 +5,7 @@ def get_prediction(energy):
 
    # energy = X_test
     #linear_model = pickle.load(open('model_d.pkl','rb'))
-    c#o2 = linear_model.predict(X_test)
+    #co2 = linear_model.predict(X_test)
     
     # TODO: Добавить загрузку модели из файла
     # Примечание: если использовалась предобработка, то нужно тоже ее выполнить в коде приложения
@@ -22,6 +22,7 @@ def get_prediction(energy):
 
     
     return co2
+
 
 
 
