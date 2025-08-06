@@ -1,4 +1,4 @@
-import pickle
+
 
 
 def get_prediction(energy):
@@ -22,6 +22,7 @@ def get_prediction(energy):
 
     
     return co2
+
 
 
 
