@@ -1,22 +1,50 @@
+<!doctype html>
+<style>
+  form {
+    margin:auto;
+    width: 35%;
+  }
+
+  .message{
+    margin:auto;
+    width:35%;
+    border: 1px solid #ccc;
+  }
+</style>
+
+
 <html>
     <head>
-        <title>Прогноз со2</title>
+        <title>Предсказание СО2</title>
     </head>
     <body>
-        <h1>Калькулятор со2</h1>
+        
         <form method="post">
+          <h1>Калькулятор СО2</h1>
             <p>
-                <label>Количесство энергии</label>
-                <input name="area" type="text">
+                <label>Количество энергии</label>
+                <input name="energy" type="text">
+            </p>
+            <p>
+                <label>Количество энергии АЭС</label>
+                <input name="energy2" type="text">
+            </p>
+            <p>
+                <label>Количество энергии природных источников</label>
+                <input name="energy3" type="text">
             </p>
             <p>
                 <input type="submit">
             </p>
-        </form>
+        
         <p>
+          <div class="result" align="center">
             {% if message %}
             {{ message }}
             {% endif %}
+          </div>
         </p>
+        </form>
+       
     </body>
 </html>
