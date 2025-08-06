@@ -16,12 +16,16 @@ def hello():
     
   if request.method == "POST":
     #en = request.form.get('energy')
-    en = 5
-    with open('model_d.pkl','rb') as f:
-      loaded_model = pickle.load(f)
+    
+   # with open('model_d.pkl','rb') as f:
+    #  loaded_model = pickle.load(f)
 
    
-    co2 = loaded_model.predict(en)
+   # co2 = loaded_model.predict(en)
+
+    
+    energy = request.form.get("energy")
+    co2 = get_prediction(energy)
 
     
     return render_template('index.html', result = co2)
