@@ -1,26 +1,28 @@
 from flask import Flask, render_template, request
 from process import get_prediction
+import pickle
+import sklearn
+from sklearn.linear_model import LinearRegression
 
 
-app = Flask(__name__)
+app = flask.Flask(__name__, template_folder = 'templates')
 
 @app.route('/', methods=["get", "post"])
-def hello():
-  message = ""
-  if request.method == "POST":
-    energy = request.form.get("energy")
-    try:
-        energy = float(energy)
-    except Exception as e:
-      print(e)
-      message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
-      energy = 0.0
+@app.route('/index', methods=["get", "post"])
 
-    co2 =  get_prediction(energy)
- 
+def index():
+  message = ""
+  if request.method == "GET":
+    return render_template('index.html')
     
-    message = f"При потребляемой энергии в размере {energy} количество выбросов будет равно {co2} "
+  if request.method == "POST":
+    with open('model_d.pkl', 'rb') as f:
+      loaded_model = pickle.load(f)
+
+    en = float(request.form['energy'])
+    co2 = loaded_model.predict([[en]])
+
+    message = f"При потребляемой энергии в размере {en} количество выбросов будет равно {co2} " 
+    return render_template('index.html', message = message)
+
     
-  
-  
-  return render_template("index.html", message = message)
