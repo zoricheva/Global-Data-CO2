@@ -1,27 +1,15 @@
-import pandas as pd
-
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
-import matplotlib
-import matplotlib.pyplot as plt
-import seaborn as sns
+import numpy as np
 from sklearn.linear_model import LinearRegression
-
 from sklearn.model_selection import train_test_split
-
 import pickle
 
-df1=pd.read_csv("/content/drive/MyDrive/Colab Notebooks/CARBON/Sum_energy.csv")
-del df1['Country']
-del df1['Year']
-del df1['Electricity from fossil fuels (TWh)']
-del df1['Electricity from nuclear (TWh)']
-del df1['Electricity from renewables (TWh)']
 
-X = df1.drop('Value_co2_emissions_kt_by_country', axis=1)
-y = df1['Value_co2_emissions_kt_by_country']
+X = np.array([23,556,34,8,12,23,6,87,90,2,11,45]).reshape(-1,1)
+y = np.array([2,45,8,10,3,7,56,34,89,4,76,6])
 
 X_train, X_test, y_train, y_test= train_test_split(X, y, test_size=0.2, random_state=42)
 
 linear_model = LinearRegression()
 linear_model.fit(X_train, y_train)
+predictions_linear = linear_model.predict(X_test)
 
