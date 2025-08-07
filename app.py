@@ -20,11 +20,13 @@ def hello():
       message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
       energy = 0.0
 
+    co2 = get_prediction(energy)
+
     #with open('model_ex.pkl','rb') as f:
     #loaded_model = pickle.load(f)
 
-      model = pickle.load(open('model_ex.pkl','rb'))
-      co2 = model.predict([[energy]])
+      #model = pickle.load(open('model_ex.pkl','rb'))
+      #co2 = model.predict([[energy]])
 
     message = f"При потребляемой энергии в размере {energy} количество выбросов будет равно {co2} "
     
