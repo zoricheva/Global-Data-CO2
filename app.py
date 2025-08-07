@@ -15,7 +15,7 @@ def hello():
   if request.method == "POST":
     energy = request.form.get("energy")
     try:
-        energy = energy
+        energy = float(energy)
     except Exception as e:
       print(e)
       message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
