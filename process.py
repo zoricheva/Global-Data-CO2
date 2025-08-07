@@ -4,10 +4,10 @@ from sklearn.preprocessing import MinMaxScaler
 
 def get_prediction(energy):
    X_test = energy
-   linear_model = pickle.load(open('model_xxx.pkl','rb'))
+   linear_model = pickle.load(open('model_xxxx.pkl','rb'))
 
    minmax_scaler = MinMaxScaler()
-   X_test = minmax_scaler.transform(X_test['Sum energy'])
+   X_test = minmax_scaler.transform(X_test['Electricity from fossil fuels (TWh)'])
 
    co2 = linear_model.predict([[X_test]])
 
@@ -24,6 +24,7 @@ def get_prediction(energy):
  
         
     #co2 = loaded_model.predict([(energy)])
+
 
 
 
