@@ -6,10 +6,6 @@ def get_prediction(energy):
    X_test = energy
    linear_model = pickle.load(open('model_xxxx.pkl','rb'))
 
-   minmax_scaler = MinMaxScaler()
-   X_train = minmax_scaler.fit_transform(X_train)
-   X_test = minmax_scaler.transform(X_test)
-
    co2 = linear_model.predict([[X_test]])
 
    return co2
@@ -25,6 +21,7 @@ def get_prediction(energy):
  
         
     #co2 = loaded_model.predict([(energy)])
+
 
 
 
