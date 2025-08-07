@@ -1,4 +1,4 @@
-
+import pickle
 
 
 def get_prediction(energy):
@@ -19,6 +19,7 @@ def get_prediction(energy):
  
         
     #co2 = loaded_model.predict([(energy)])
+
 
 
 
