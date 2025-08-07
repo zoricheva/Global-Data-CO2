@@ -21,7 +21,8 @@ def get_prediction(energy):
      
 
     
-    return co2
+return co2
+
 
 
 
