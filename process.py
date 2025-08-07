@@ -3,7 +3,7 @@ import pickle
 
 def get_prediction(energy):
    X_test = energy
-   linear_model = pickle.load(open('model_ex.pkl','rb'))
+   linear_model = pickle.load(open('model_x.pkl','rb'))
    co2 = linear_model.predict([[X_test]])
 
    return co2
@@ -19,6 +19,7 @@ def get_prediction(energy):
  
         
     #co2 = loaded_model.predict([(energy)])
+
 
 
 
