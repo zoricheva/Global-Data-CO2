@@ -20,7 +20,8 @@
 <tr>
 <td class="yiv0374367716mceTextBlockContainer" style="padding: 12px 24px 12px 24px;">
 <div id="yiv0374367716d9" class="yiv0374367716mceText" style="width: 100%;">
-  
+
+  <form method="post">
 <h1 class="yiv0374367716last-child">Калькулятор СО2</h1>
 <p>&nbsp;</p>
 <h1 style="font-family: Times; font-variant-ligatures: normal; orphans: 2; widows: 2; text-decoration-thickness: initial;"><span style="font-size: medium;">Количество энергии природных источников</span>&nbsp;<input name="energy1" type="text" /></h1>
@@ -29,6 +30,14 @@
 <p style="font-family: Times; font-size: medium; font-variant-ligatures: normal; orphans: 2; widows: 2; text-decoration-thickness: initial;">
   
   <input type="submit" /></p>
+      <p>
+          <div class="result">
+            {% if message %}
+            {{ message }}
+            {% endif %}
+          </div>
+        </p>
+        </form>
 </div>
 </td>
 </tr>
