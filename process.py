@@ -1,4 +1,5 @@
 import pickle
+import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
 
@@ -25,6 +26,7 @@ def get_prediction(energy):
  
         
     #co2 = loaded_model.predict([(energy)])
+
 
 
 
