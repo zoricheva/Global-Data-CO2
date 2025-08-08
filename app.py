@@ -25,7 +25,7 @@ def hello():
       message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
       energy = 0.0
 
-    energy = [[energy1, energy2, energy3]]
+    energy = [energy1, energy2, energy3]
     co2 = get_prediction(energy)
 
 
