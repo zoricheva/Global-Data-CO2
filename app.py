@@ -29,7 +29,8 @@ def hello():
     
     minmax_scaler = MinMaxScaler()
     e = minmax_scaler.fit_transform(en)
-    energy = minmax_scaler.transform(np.array(e).reshape(-1, 1))
+    energy = minmax_scaler.transform(np.array(e))
+    energy = energy.reshape(-1, 1)
 
     co2 = get_prediction(energy)
 
