@@ -13,14 +13,19 @@ app = Flask(__name__)
 def hello():
   message = ""
   if request.method == "POST":
-    energy = request.form.get("energy")
+    energy1 = request.form.get("energy1")
+    energy2 = request.form.get("energy2")
+    energy3 = request.form.get("energy3")
     try:
-        energy = float(energy)
+        energy1 = float(energy1)
+        energy2 = float(energy2)
+        energy3 = float(energy3)
     except Exception as e:
       print(e)
       message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
       energy = 0.0
 
+    energy = [[energy1, energy2, energy3]]
     co2 = get_prediction(energy)
 
 
