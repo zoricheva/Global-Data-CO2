@@ -25,13 +25,9 @@ def hello():
       message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
       energy = 0.0
 
-    en = [energy1, energy2, energy3]
+    energy = [energy1, energy2, energy3]
     
-    minmax_scaler = MinMaxScaler()
-    e = minmax_scaler.fit_transform(en)
-    energy = minmax_scaler.transform(np.array(e))
-    energy = energy.reshape(-1, 1)
-
+   
     co2 = get_prediction(energy)
 
 
