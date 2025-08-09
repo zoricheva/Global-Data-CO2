@@ -13,7 +13,7 @@ def get_prediction(energy):
 
    #minmax_scaler_X = MinMaxScaler()
    #minmax_scaler_X.fit([X])
-   #X_test = minmax_scaler_X.transform(X_test)
+   X_test = linear_model.transform(X_test)
    
    co2 = linear_model.predict(X_test)
 
@@ -25,6 +25,7 @@ def get_prediction(energy):
 #X_test = minmax_scaler.transform(np.array(X_test))
 
    
+
 
 
 
