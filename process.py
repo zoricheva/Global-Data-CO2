@@ -20,7 +20,7 @@ def get_prediction(energy):
    #X_test = pipline.transform(X_test)
    #co2 = pipline.predict(X_test)
 
-   co2 = minmax.transform(X_test)
+   co2 = minmax.fit_transform(np.array(X_test))
    X_test = co2
    co2 = linear_model.predict(X_test)
 
@@ -32,6 +32,7 @@ def get_prediction(energy):
 #X_test = minmax_scaler.transform(np.array(X_test))
 
    
+
 
 
 
