@@ -2,5 +2,5 @@ Flask
 Gunicorn
 scikit-learn
 numpy
-
+pandas
 
