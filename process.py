@@ -8,7 +8,7 @@ from sklearn.pipeline import Pipeline
 def get_prediction(energy):
    X_test = [energy]
 
-   pipeline = pickle.load(open('pipline.pkl', 'rb'))
+   model = pickle.load(open('pipline.pkl', 'rb'))
    #linear_model = pickle.load(open('model41.pkl','rb'))
    #minmax_scaler_X = pickle.load(open('model41.pkl','rb'))
    
@@ -19,7 +19,7 @@ def get_prediction(energy):
    #X_test = minmax_scaler_X.transform(X_test)
 
    
-   co2 = pipeline.predict(X_test)
+   co2 = model.predict(X_test)
 
    
    #co2 = linear_model.predict(X_test)
@@ -32,6 +32,7 @@ def get_prediction(energy):
 #X_test = minmax_scaler.transform(np.array(X_test))
 
    
+
 
 
 
