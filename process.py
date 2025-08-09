@@ -1,5 +1,5 @@
 import pickle
-import numpy as np
+
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.pipeline import Pipeline
@@ -32,6 +32,7 @@ def get_prediction(energy):
 #X_test = minmax_scaler.transform(np.array(X_test))
 
    
+
 
 
 
