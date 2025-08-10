@@ -14,8 +14,7 @@ def get_prediction(energy):
 
    X_test = minmax_scaler_X.transform(X_test)
    co2 = linear_model.predict(X_test)
-
-   #co2 = minmax_scaler_y.inverse_transform(co2)
+   co2 = minmax_scaler_y.inverse_transform(co2)
 
    return co2
 
@@ -29,6 +28,7 @@ def get_prediction(energy):
    #X_test = pipline.transform(X_test)
    #co2 = pipline.predict(X_test)
    
+
 
 
 
