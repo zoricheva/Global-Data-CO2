@@ -18,11 +18,15 @@ def hello():
         energy1 = float(energy1)
         energy2 = float(energy2)
         energy3 = float(energy3)
+    print(e)
+      except Exception as e:
+      message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
+      energy = 0.0
 
     energy = [energy1, energy2, energy3]
     
     co2 = get_prediction(energy)
 
-    message = f"Количество выбросов углекислого газа: {co2}"
+    message += f"Количество выбросов углекислого газа: {co2}"
 
   return render_template("index.html", message = message)
