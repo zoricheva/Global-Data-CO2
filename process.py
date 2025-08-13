@@ -12,7 +12,7 @@ def get_prediction(energy):
    X_test = pd.DataFrame(X_test,columns=['Electricity from fossil fuels (TWh)','Electricity from nuclear (TWh)','Electricity from renewables (TWh)'])
 
    X_test = minmax_scaler_X.transform(X_test)
-   
+   co2 = linear_model.predict(X_test)
    co2 = minmax_scaler_y.inverse_transform(co2)
   
   return co2
