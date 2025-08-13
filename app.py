@@ -9,6 +9,7 @@ app = Flask(__name__)
 @app.route('/', methods = ["get","post"])
 
 def hello():
+  message = ""
   if request.method == "POST":
     energy1 = request.form.get("energy1")
     energy2 = request.form.get("energy2")
@@ -22,6 +23,6 @@ def hello():
     
     co2 = get_prediction(energy)
 
-
+    message = f"Количество выбросов углекислого газа: {co2}"
 
   return render_template("index.html", message = message)
