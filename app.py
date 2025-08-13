@@ -18,6 +18,10 @@ def hello():
         energy2 = float(energy2)
         energy3 = float(energy3)
 
+    energy = [energy1, energy2, energy3]
+    
+    co2 = get_prediction(energy)
+
 
 
   return render_template("index.html", message = message)
