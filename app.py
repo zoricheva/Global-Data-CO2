@@ -21,9 +21,10 @@ def hello():
       
     
       except Exception as e:
-      message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
-      energy = 0.0
-      return render_template("index.html", message = message)
+        e = 0.0
+        message += "Некорректный ввод. Установлено значение по умолчанию: {e} "
+      
+      
 
     energy = [energy1, energy2, energy3]
     
