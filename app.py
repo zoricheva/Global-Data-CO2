@@ -21,10 +21,10 @@ def hello():
       
         energy = [energy1, energy2, energy3]
     
-      except Exception as e:
-        e = 0.0
-        message += "Некорректный ввод. Установлено значение по умолчанию: {e} "
-        energy = 0.0
+    except Exception as e:
+      e = 0.0
+      message += "Некорректный ввод. Установлено значение по умолчанию: {e} "
+      energy = 0.0
         
 
     
