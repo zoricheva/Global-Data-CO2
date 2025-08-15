@@ -19,9 +19,9 @@ def hello():
         energy2 = float(energy2)
         energy3 = float(energy3)
     
-      except Exception as e:
-      message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
-      energy = 0.0
+    except Exception as e:
+    message += "Некорректный ввод. Установлено значение по умолчанию: 0 "
+    energy = 0.0
     
 
     energy = [energy1, energy2, energy3]
